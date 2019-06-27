@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Person Management System</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8"/>
+    <link href="/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" media="screen"/>
+    
+    <script type="text/javascript">
+       function validate(){
+    	   	var id        = document.forms["searchScreen"] ["id"].value;
+    		var firstName = document.forms["searchScreen"]["firstName"].value;      
+    		var lastName  = document.forms["searchScreen"]["lastName"].value;   
+    		var age		  = document.forms["searchScreen"]["age"].value;   
+    		if (id !=null && id !=undefined && id!="")
+    			{
+    			  return true;
+    			}
+    		else
+    			{
+	    		if (firstName == null|| firstName == undefined ||firstName =="")
+	    			{
+	    			alert("Please enter first name");
+	    			return false;
+	    			}
+	    		if (lastName ==null || lastName==undefined||lastName=="")
+	    			{
+	    			alert("Please enter last name");
+	    			return false;
+	    			}
+	    		if (age == null || age == undefined||age=="")
+	    			{
+	    			alert("Please enter age");
+	    			return false;
+	    			}
+	    		return true;
+    			}
+    	}
+    </script>
+</head>
+<body>
+	<nav>
+       <ul>
+          <li>Person Management System </li>
+          <li><a th:href="@{/}">Search</a></li>
+           <li><a th:href="@{/create-entry}">Create</a></li>
+        </ul>
+    </nav> 
+    <div align="center" class="form-style-8">
+	<h2>Person Search</h2>
+    <form name ="searchScreen" action="#" th:action="@{/search}" th:object="${uidata.searchQuery}" onsubmit="return validate()" method="post">
+    	<table>
+    	  <tr> <td>Id         </td> <td> <input type="text" class="id"        id="id"         th:field="*{id}" />       </td></tr>
+	      <tr> <td>First Name </td> <td> <input type="text" class="firstName" id="firstName"  th:field="*{firstName}"/> </td></tr> 
+          <tr> <td>Last Name  </td> <td> <input type="text" class="lastName"  id="lastName"   th:field="*{lastName}"/>  </td></tr>	
+	      <tr> <td>Age        </td> <td> <input type="text" class="age"       id="age"        th:field="*{age}" />      </td></tr>	
+	      <tr> <td></td>            <td><input type="submit" class="submitbtn" id="submitbtn"  value="Submit" /> 		</td></tr>	
+	   </table>
+    </form>
+    </div>
+</body>
+</html>
