@@ -1,7 +1,6 @@
 # PersonManagementSystem
-PersonManagementSystem
 
-This repository contains code and supporting files for the Person ManagementSystem
+This repository contains code and support files for the Person ManagementSystem
 
 ## Running Application locally
 
@@ -11,7 +10,7 @@ This repository contains code and supporting files for the Person ManagementSyst
 
 	Step 1- File -> Import -> Maven -> Existing Maven project
 	
-	Step 2- Run the Project on Tomcat v9.0 Server.
+	Step 2- Select the Project -> Run as -> Run on Server -> Run the Project on Tomcat v9.0 Server.
 	
    The URL to launch the application is http://localhost:8080/PersonManagment/
 
