@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Person Management System</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8"/>
+    <link href="/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+	<nav>
+       <ul>
+          <li>Person Management System </li>
+          <li><a th:href="@{/}">Search</a></li>
+           <li><a th:href="@{/create-entry}">Create</a></li>
+        </ul>
+    </nav> 
+    <div align="center" class="form-style-8">
+	<h2>Person Data</h2>
+	 <form name="resultform" action="#" th:action="@{/update}"  th:object="${uidata.person}"  method="post">
+    	<table>
+    	  <tr> <td>Id    		  </td> <td> <input type="text" readonly   th:field="*{id}" /></td></tr> 
+	      <tr> <td>First Name     </td> <td> <input type="text"   th:field="*{firstName}" /></td></tr> 
+          <tr> <td>Last Name      </td> <td> <input type="text"   th:field="*{lastName}" /></td></tr>	
+	      <tr> <td>Age            </td> <td> <input type="text"   th:field="*{age}" /></td></tr>
+	      <tr> <td>Favorite Color </td> <td> <input type="text"   th:field="*{favoriteColor}" /></td></tr>
+	      <tr> <td>Hobby          </td> <td> <input type="text"   th:field="*{hobby}" /></td></tr>
+	   </table>
+	   <input type="submit"  value="Update" />
+    </form>
+    <form name="resultform1" action="#" th:action="@{/delete}"  th:object="${uidata.person}" method="post">
+    <table>
+       <tr><td><input type="hidden"   th:field="*{id}" /></td></tr>
+	   <tr> <td><input type="submit"  value="Delete" /> </td></tr>
+	   </table>
+    </form>
+    </div>
+</body>
+</html>

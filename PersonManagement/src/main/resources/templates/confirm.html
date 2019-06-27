@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Person Management System</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8"/>
+    <link href="/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<nav>
+       <ul>
+          <li>Person Management System </li>
+          <li><a th:href="@{/}">Search</a></li>
+           <li><a th:href="@{/create-entry}">Create</a></li>
+        </ul>
+    </nav> 
+    <div align="center" class="form-style-8">
+     	  <h2>Confirmation</h2>
+		  <div  align="center" style="color:green">
+			<h3 th:text="${message}"> </h3>
+		  </div>
+	</div>
+</body>
+</html>

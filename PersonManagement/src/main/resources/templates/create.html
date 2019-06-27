@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Person Management System</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8"/>
+    <link href="/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" media="screen"/>
+    <script>
+    function onsubmitForm() {
+		var firstName = document.forms["createscreen"]["firstName"].value;      
+		var lastName  = document.forms["createscreen"]["lastName"].value;   
+		var age		  = document.forms["createscreen"]["age"].value;   
+    	if (firstName == null|| firstName == undefined ||firstName =="")
+    		{
+    		alert("Please enter first name");
+    		return false;
+    		}
+    	if (lastName ==null || lastName==undefined||lastName=="")
+    		{
+    		alert("Please enter last name");
+    		return false;
+    		}
+    	if (age == null || age == undefined||age=="")
+    		{
+    		alert("Please enter age");
+    		return false;
+    		}
+    	return true;
+    }
+</script>   
+</head>
+<body>
+	<nav>
+       <ul>
+          <li>Person Management System </li>
+          <li><a th:href="@{/}">Search</a></li>
+           <li><a th:href="@{/create-entry}">Create</a></li>
+        </ul>
+    </nav> 
+    <div align="center" class="form-style-8">
+	<h2>Create Person</h2>
+    <form name="createscreen" action="#" th:action="@{/save}" th:object="${uidata.person}" onsubmit="return onsubmitForm()" method="post">
+    	<table>
+	      <tr> <td>First Name     </td> <td> <input type="text" class="firstName" id="firstName"  th:field="*{firstName}" /></td></tr> 
+          <tr> <td>Last Name      </td> <td> <input type="text" class="lastName" id="lastName"  th:field="*{lastName}" /></td></tr>	
+	      <tr> <td>Age            </td> <td> <input type="text" class="age"id="age"  th:field="*{age}" /></td></tr>
+	      <tr> <td>Favorite Color </td> <td> <input type="text" th:field="*{favoriteColor}" /></td></tr>
+	      <tr> <td>Hobby          </td> <td> <input type="text" th:field="*{hobby}" /></td></tr>
+	      <tr> <td> </td><td><input type="submit"   value="Save" /> </td></tr>	
+	   </table>
+    </form>
+    </div>
+</body>
+</html>
